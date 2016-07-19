@@ -1,3 +1,5 @@
 {
-  "hookUrl": "<slack hook url>"
+  "hookUrl": "<slack hook url>",
+  "channel": "#mychannel",
+  "env": "test"
 }

@@ -1,6 +1,11 @@
 'use strict';
 var Slack = require('node-slack');
 var config = require('./config.json');
+
+var env = config.env;
+var user = !!env ? `Hobknob (${env})` : 'Hobknob';
+var channel = config.channel;
+
 var slack = new Slack(config.hookUrl, {});
 
 var getUsername = (user) => {
@@ -26,8 +31,8 @@ module.exports = {
   addFeature: function(featureEvent, next) {
     slack.send({
         text: `${getUsername(featureEvent.user)} added ${featureEvent.featureName} to ${featureEvent.applicationName}`,
-        channel: '#deployments',
-        username: 'hobknob'
+        channel: channel,
+        username: user
     });
     next();
   },
@@ -41,8 +46,8 @@ module.exports = {
   deleteFeature: function(featureEvent, next) {
     slack.send({
         text: `${getUsername(featureEvent.user)} deleted ${featureEvent.featureName} from ${featureEvent.applicationName}`,
-        channel: '#deployments',
-        username: 'hobknob'
+        channel: channel,
+        username: user
     });
     next();
   },
@@ -59,8 +64,8 @@ module.exports = {
     var t = formatToggleName(toggleEvent.featureName, toggleEvent.toggleName);
     slack.send({
         text: `${getUsername(toggleEvent.user)} added ${t} to ${toggleEvent.applicationName}`,
-        channel: '#deployments',
-        username: 'hobknob'
+        channel: channel,
+        username: user
     });
     next();
   },
@@ -77,8 +82,8 @@ module.exports = {
     var t = formatToggleName(updateEvent.featureName, updateEvent.toggleName);
     slack.send({
         text: `${getUsername(updateEvent.user)} changed ${updateEvent.applicationName} ${t} to ${updateEvent.value}`,
-        channel: '#deployments',
-        username: 'hobknob'
+        channel: channel,
+        username: user
     });
     next();
   },
@@ -94,8 +99,8 @@ module.exports = {
     var t = formatToggleName(deleteEvent.featureName, deleteEvent.toggleName);
     slack.send({
         text: `${getUsername(deleteEvent.user)} deleted ${t} from ${deleteEvent.applicationName}`,
-        channel: '#deployments',
-        username: 'hobknob'
+        channel: channel,
+        username: user
     });
     next();
   }
