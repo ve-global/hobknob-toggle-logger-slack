@@ -1,0 +1,27 @@
+{
+  "name": "hobknob-toggle-logger-slack",
+  "version": "1.0.0",
+  "description": "log toggle events to slack",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ve-interactive/hobknob-toggle-logger-slack.git"
+  },
+  "author": "Andy Royle <ajroyle@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ve-interactive/hobknob-toggle-logger-slack/issues"
+  },
+  "homepage": "https://github.com/ve-interactive/hobknob-toggle-logger-slack#readme",
+  "dependencies": {
+    "node-slack": "0.0.7"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-jshint": "^1.0.0"
+  }
+}
