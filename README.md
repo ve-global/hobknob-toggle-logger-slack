@@ -13,3 +13,12 @@ __Configuration__
   "hookUrl": "https://hooks.slack.com/services/my-slack-hook-url"
 }
 ```
+
+__Hobknob Configuration__
+
+```
+  "hooks": [
+    "/foo/some/other/hook.js",
+    "node_modules/hobknob-toggle-logger-slack/index.js"
+  ],
+```
