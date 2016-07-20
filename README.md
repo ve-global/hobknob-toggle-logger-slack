@@ -10,9 +10,15 @@ __Configuration__
 
 ```
 {
-  "hookUrl": "https://hooks.slack.com/services/my-slack-hook-url"
+  "hookUrl": "https://hooks.slack.com/services/my-slack-hook-url",
+  "channel": "#mychannel",
+  "env": "test"              // optional
 }
 ```
+
+- `hookUrl`: create a new integration in slack and paste the hook url here
+- `channel`: channel to post to
+- `env`: (optional) sets the username when posting to `Hobknob (<env>)`, useful if you run separate instances of hobknob for test/prod
 
 __Hobknob Configuration__
 
